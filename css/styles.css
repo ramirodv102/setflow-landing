@@ -241,10 +241,23 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 }
 .nav-logo { flex-shrink: 0; line-height: 0; }
 
-.logo-dark  { display: none; }
-.logo-light { display: block; }
-.navbar.scrolled .logo-dark  { display: block; }
-.navbar.scrolled .logo-light { display: none; }
+.nav-logo { position: relative; }
+
+.logo-dark,
+.logo-light { display: block; transition: opacity 0.25s ease; }
+
+.logo-dark {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.logo-light { opacity: 1; }
+
+.navbar.scrolled .logo-dark  { opacity: 1; pointer-events: auto; transition-delay: 0.15s; }
+.navbar.scrolled .logo-light { opacity: 0; pointer-events: none; }
 
 .nav-links {
   display: flex;
