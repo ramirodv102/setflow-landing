@@ -244,20 +244,34 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 .nav-logo { position: relative; }
 
 .logo-dark,
-.logo-light { display: block; transition: opacity 0.25s ease; }
+.logo-light { display: block; }
 
 .logo-dark {
   opacity: 0;
+  visibility: hidden;
   position: absolute;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   pointer-events: none;
+  transition: opacity 0.2s ease 0s, visibility 0s linear 0.2s;
 }
-.logo-light { opacity: 1; }
+.logo-light {
+  opacity: 1;
+  transition: opacity 0.15s ease 0s;
+}
 
-.navbar.scrolled .logo-dark  { opacity: 1; pointer-events: auto; transition-delay: 0.15s; }
-.navbar.scrolled .logo-light { opacity: 0; pointer-events: none; }
+.navbar.scrolled .logo-dark {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.2s ease 0.38s, visibility 0s linear 0.38s;
+}
+.navbar.scrolled .logo-light {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease 0s;
+}
 
 .nav-links {
   display: flex;
