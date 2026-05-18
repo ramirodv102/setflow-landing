@@ -1,0 +1,12 @@
+.claude/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archivos de assets originales (no son parte del sitio web)
+setflow_white_logo_assets_for_supplier/
+cartel.png
+complete image.png
+complete logo.png
+icon transparent.png
+icon for instagram.png
